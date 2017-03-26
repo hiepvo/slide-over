@@ -4,35 +4,49 @@
 (function(){
   var init = {};
 
-  var links = document.querySelectorAll('.slideover-text');
+  var links  = document.querySelectorAll('.slideover-text');
+  var closes = document.querySelectorAll('.s-close');
 
   for(var i = 0; i < links.length; i++){
-    links[i].addEventListener('mouseenter', openSlideOver, false);
+    links[i].addEventListener('click', openSlideOver, false);
+    closes[i].addEventListener('click', closeSlideOver, false);
+  }
+
+  function  clearPopup(e){
+    var popups  = document.querySelectorAll('.slideover');
+    var i = 0;
+    for(i; i < popups.length; i++){
+      if(popups[i].className.indexOf('hide') ===-1){
+        hide(popups[i], 0);
+        removeClass(popups[i].children[0], 'animated-height');
+        removeClass(popups[i].children[0].children[0], 'slideover__content--visible');
+        addClass(popups[i].children[0].children[0], 'slideover__content--invisible');
+      }
+    }
   }
 
   function closeSlideOver(e){
     var el = e.target;
-    hide(el, 0);
-    var animatedHeight        = document.querySelector('#' + el.id + ' .slideover__content');
-    var caption        = document.querySelector('#' + el.id + ' .slideover__content + span');
-    var content           = document.querySelector('#' + el.id + ' .slideover__content div');
-    removeClass(animatedHeight, 'animated-height');
-    removeClass(caption,'slideover__caption--visible');
+    var contentWrapper = el.parentNode;
+    var content        = contentWrapper.children[0];
+
+    hide(contentWrapper.parentNode, 0);
+    removeClass(contentWrapper, 'animated-height');
     removeClass(content, 'slideover__content--visible');
     addClass(content, 'slideover__content--invisible');
   }
 
   function openSlideOver(e){
-    var rect = getElemPos(this);
-    var el   = document.getElementById(this.htmlFor);
-    el.addEventListener('mouseleave', closeSlideOver, false);
+    clearPopup()
+    var rect           = getElemPos(this);
+    var el             = document.getElementById(this.htmlFor);
+
     var animatedHeight = document.querySelector('#' + this.htmlFor + ' .slideover__content');
-    var caption = document.querySelector('#' + this.htmlFor + ' .slideover__content + span');
-    var content    = document.querySelector('#' + this.htmlFor + ' .slideover__content div');
+    var caption        = document.querySelector('#' + this.htmlFor + ' .slideover__content + span');
+    var content        = document.querySelector('#' + this.htmlFor + ' .slideover__content div');
     placeEl(el, rect.left, rect.top - 10);
     show(el, 0);
     addClass(animatedHeight, 'animated-height');
-    addClass(caption, 'slideover__caption--visible');
 
     removeClass(content, 'slideover__content--invisible');
     addClass(content, 'slideover__content--visible');
@@ -44,7 +58,6 @@
     el.style.left = x_pos - el.offsetWidth / 3 + 'px';
     el.style.top  = y_pos + 'px';
   }
-
 
   function hide(el, time){
     setTimeout(function(){
