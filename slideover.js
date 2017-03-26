@@ -12,11 +12,11 @@
     closes[i].addEventListener('click', closeSlideOver, false);
   }
 
-  function  clearPopup(e){
-    var popups  = document.querySelectorAll('.slideover');
-    var i = 0;
+  function clearPopup(e){
+    var popups = document.querySelectorAll('.slideover');
+    var i      = 0;
     for(i; i < popups.length; i++){
-      if(popups[i].className.indexOf('hide') ===-1){
+      if(popups[i].className.indexOf('hide') === -1){
         hide(popups[i], 0);
         removeClass(popups[i].children[0], 'animated-height');
         removeClass(popups[i].children[0].children[0], 'slideover__content--visible');
@@ -26,28 +26,31 @@
   }
 
   function closeSlideOver(e){
-    var el = e.target;
+    var el             = e.target;
     var contentWrapper = el.parentNode;
     var content        = contentWrapper.children[0];
-
+    var caption = contentWrapper.nextElementSibling;
     hide(contentWrapper.parentNode, 0);
+    removeClass(contentWrapper.parentNode, 'swing');
     removeClass(contentWrapper, 'animated-height');
     removeClass(content, 'slideover__content--visible');
     addClass(content, 'slideover__content--invisible');
+    removeClass(caption, 'swing');
+
   }
 
   function openSlideOver(e){
     clearPopup()
-    var rect           = getElemPos(this);
-    var el             = document.getElementById(this.htmlFor);
+    var rect = getElemPos(this);
+    var el   = document.getElementById(this.htmlFor);
 
     var animatedHeight = document.querySelector('#' + this.htmlFor + ' .slideover__content');
     var caption        = document.querySelector('#' + this.htmlFor + ' .slideover__content + span');
-    var content        = document.querySelector('#' + this.htmlFor + ' .slideover__content div');
+    var content        = document.querySelector('#' + this.htmlFor + ' .slideover__content>div');
     placeEl(el, rect.left, rect.top - 10);
     show(el, 0);
     addClass(animatedHeight, 'animated-height');
-
+    addClass(el, 'swing');
     removeClass(content, 'slideover__content--invisible');
     addClass(content, 'slideover__content--visible');
 
