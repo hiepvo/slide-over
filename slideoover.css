@@ -1,0 +1,101 @@
+
+.slideover {
+  position: absolute;
+  width: 300px;
+
+}
+.s-icon {
+  width: 5px;
+  height: 5px;
+  background-color: #61AFDE;
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+}
+
+.slideover-text {
+  position: relative;
+  cursor: pointer;
+  color: #61AFDE;
+  font-weight: bold;
+}
+
+.slideover__content {
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  max-height: 0;
+  bottom: 100%;
+  color: #515151;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  background-color: #EDECEA;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.3rem;
+  white-space: normal;
+  box-sizing: border-box;
+  border-top: 4px solid #C0BFBD;
+
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+
+}
+
+.slideover__content div{
+  font-size: 16px;
+  padding: 1rem;
+}
+
+.animated-height {
+  max-height: 25rem;
+
+  -webkit-transition: max-height ease-out 0.65s 0.35s;
+  -moz-transition: max-height ease-out 0.65s 0.35s;
+  -ms-transition: max-height ease-out 0.65s 0.35s;
+  -o-transition: max-height ease-out 0.65s 0.35s;
+  transition: max-height ease-out 0.65s 0.35s;
+
+}
+
+.slideover__caption {
+  background-color: #A4A3A2;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  color: white;
+  display: block;
+  height: 2rem;
+  left: 0;
+  line-height: 2rem;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+.slideover__content .slideover__content--invisible {
+  opacity: 0;
+}
+
+.slideover__content--visible {
+  opacity: 1;
+  -webkit-transition: opacity ease-in 0.35s .35s;
+  -moz-transition: opacity ease-in 0.35s .35s;
+  -ms-transition: opacity ease-in 0.35s .35s;
+  -o-transition: opacity ease-in 0.35s .35s;
+  transition: opacity ease-in 0.35s .35s;
+}
+
+.slideover__caption--visible {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s 0s;
+  -moz-transition: opacity 0.5s 0s;
+  -ms-transition: opacity 0.5s 0s;
+  -o-transition: opacity 0.5s 0s;
+  transition: opacity 0.5s 0s;
+}
+
+.hide {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
