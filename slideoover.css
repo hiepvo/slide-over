@@ -97,11 +97,10 @@
 
 .slideover__content--visible {
   opacity: 1;
-  -webkit-transition: opacity ease-in 0.35s .35s;
-  -moz-transition: opacity ease-in 0.35s .35s;
-  -ms-transition: opacity ease-in 0.35s .35s;
-  -o-transition: opacity ease-in 0.35s .35s;
-  transition: opacity ease-in 0.35s .35s;
+  -webkit-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 250ms;
+  -moz-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 250ms;
+  -o-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 250ms;
+  transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 250ms; /* easeOutExpo */
 }
 
 .swing
