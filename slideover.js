@@ -41,13 +41,12 @@
 
   function openSlideOver(e){
     clearPopup()
-    var rect = getElemPos(this);
     var el   = document.getElementById(this.htmlFor);
 
     var animatedHeight = document.querySelector('#' + this.htmlFor + ' .slideover__content');
-    var caption        = document.querySelector('#' + this.htmlFor + ' .slideover__content + span');
     var content        = document.querySelector('#' + this.htmlFor + ' .slideover__content>div');
-    placeEl(el, rect.left, rect.top - 10);
+
+    placeEl(el, this.offsetLeft, this.offsetTop - 10);
     show(el, 0);
     addClass(animatedHeight, 'animated-height');
     addClass(el, 'swing');
@@ -72,30 +71,6 @@
     setTimeout(function(){
       removeClass(el, 'hide');
     }, time);
-  }
-
-  /*********** Helpers ***************/
-  function getElemPos(elem){
-    // (1) Get the enclosing rectangle
-    var box  = elem.getBoundingClientRect();
-    var body = document.body;
-    var doc  = document.documentElement;
-    // (2) Calculate the page scroll.
-    // All browsers except IE<9 support `pageXOffset/pageYOffset`, and in IE when DOCTYPE is set,
-    // the scroll can be taken from documentElement(<html>), otherwise from `body` - so we take what we can.
-    var scrollTop  = window.pageYOffset || doc.scrollTop || body.scrollTop;
-    var scrollLeft = window.pageXOffset || doc.scrollLeft || body.scrollLeft;
-    // (3) The document (`html` or `body`) can be shifted from left-upper corner in IE. Get the shift.
-    var clientTop  = doc.clientTop || body.clientTop || 0;
-    var clientLeft = doc.clientLeft || body.clientLeft || 0;
-    // (4) Add scrolls to window-relative coordinates
-    // and subtract the shift of `html/body` to get coordinates in the whole document.
-    var top  = box.top + scrollTop - clientTop;
-    var left = box.left + scrollLeft - clientLeft;
-    return {
-      top: Math.round(top),
-      left: Math.round(left)
-    };
   }
 
   function hasClass(el, className){
