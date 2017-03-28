@@ -2,6 +2,7 @@
 .slideover {
   position: absolute;
   width: 18rem;
+  -webkit-transform: translateZ(0);
 }
 
 .s-icon {
