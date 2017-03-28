@@ -71,10 +71,10 @@
 .animated-height {
   max-height: 18rem;
 
-  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 150ms;
-  -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 150ms;
-  -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 150ms;
-  transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 150ms; /* easeOutExpo */
+  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms;
+  -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms;
+  -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms;
+  transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms; /* easeOutExpo */
 }
 
 .slideover__header {
@@ -103,10 +103,10 @@
 
 .slideover__content--visible {
   opacity: 1;
-  -webkit-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 250ms;
-  -moz-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 250ms;
-  -o-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 250ms;
-  transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 250ms; /* easeOutExpo */
+  -webkit-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 350ms;
+  -moz-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 350ms;
+  -o-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 350ms;
+  transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 350ms; /* easeOutExpo */
 }
 .hide {
   position: absolute !important;
