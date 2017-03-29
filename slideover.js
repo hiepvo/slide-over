@@ -35,7 +35,7 @@
     removeClass(contentWrapper, 'animated-height');
     removeClass(content, 'slideover__content--visible');
     addClass(content, 'slideover__content--invisible');
-    hide(contentWrapper.parentNode, 750);
+    hide(contentWrapper.parentNode, 500);
 
     //removeClass(caption, 'popout');
   }
