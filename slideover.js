@@ -30,13 +30,14 @@
     var contentWrapper = el.parentNode;
     var content        = contentWrapper.children[0];
     var caption = contentWrapper.nextElementSibling;
-    hide(contentWrapper.parentNode, 0);
-    removeClass(contentWrapper.parentNode, 'swing');
+
+    removeClass(contentWrapper.parentNode, 'popout');
     removeClass(contentWrapper, 'animated-height');
     removeClass(content, 'slideover__content--visible');
     addClass(content, 'slideover__content--invisible');
-    removeClass(caption, 'swing');
+    hide(contentWrapper.parentNode, 750);
 
+    //removeClass(caption, 'popout');
   }
 
   function openSlideOver(e){
@@ -48,8 +49,8 @@
 
     placeEl(el, this.offsetLeft, this.offsetTop - 10);
     show(el, 0);
+    addClass(el, 'popout');
     addClass(animatedHeight, 'animated-height');
-    addClass(el, 'swing');
     removeClass(content, 'slideover__content--invisible');
     addClass(content, 'slideover__content--visible');
 

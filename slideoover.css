@@ -3,6 +3,16 @@
   position: absolute;
   width: 18rem;
   -webkit-transform: translateZ(0);
+  -webkit-transform: scale(0.94);
+  -moz-transform: scale(0.94);
+  -ms-transform: scale(0.94);
+  -o-transform: scale(0.94);
+  transform: scale(0.94);
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
 }
 
 .s-icon {
@@ -58,7 +68,13 @@
   white-space: normal;
   box-sizing: border-box;
   border-top: 6px solid #C0BFBD;
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);  }
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  
+  -webkit-transition: max-height 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms;
+  -moz-transition: max-height 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms;
+  -o-transition: max-height 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms;
+  transition: max-height 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms; /* easeOutExpo */
+}
 
 .slideover__content p {
   margin: 12px;
@@ -71,11 +87,6 @@
 
 .animated-height {
   max-height: 18rem;
-
-  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms;
-  -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms;
-  -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms;
-  transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 220ms; /* easeOutExpo */
 }
 
 .slideover__header {
@@ -100,14 +111,61 @@
 
 .slideover__content .slideover__content--invisible {
   opacity: 0;
+
+  -webkit-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -moz-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -o-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
 }
 
 .slideover__content--visible {
   opacity: 1;
-  -webkit-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 350ms;
-  -moz-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 350ms;
-  -o-transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 350ms;
-  transition: opacity 350ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 350ms; /* easeOutExpo */
+  -webkit-transition-delay: 350ms;
+  -moz-transition-delay: 350ms;
+  -ms-transition-delay: 350ms;
+  -o-transition-delay: 350ms;
+  transition-delay: 350ms;
+}
+.popout
+{
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  /*
+  -webkit-animation: popout 0.35s ease-out;
+  animation: popout 0.35s ease-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  */
+}
+
+
+@-webkit-keyframes popout
+{
+  0% {
+    -webkit-transform: scale(0.94);
+    transform: scale(0.94);
+  }
+  100%
+  {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes popout
+{
+  0%
+  {
+    -webkit-transform: scale(0.94);
+    transform: scale(0.94);
+  }
+  100%
+  {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 .hide {
   position: absolute !important;
